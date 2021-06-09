@@ -1,0 +1,8 @@
+{
+  "bundles": {
+      "Svc\\UtilBundle\\SvcUtilBundle": ["all"]
+  },
+  "copy-from-recipe": {
+      "assets/": "assets/"
+  }
+}
