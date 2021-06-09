@@ -2,8 +2,8 @@
 <bg=blue;fg=white> Finish Encore Installation </>
 <bg=blue;fg=white>                            </>
 
-  * Install Yarn and run <fg=green>yarn install</>
+  * svc util installed</>
 
-  * Uncomment the Twig helpers in <fg=green>templates/base.html.twig</>
+  * Mach noch das
 
-  * Start the development server: <fg=green>yarn encore dev-server</>
+  * und das
