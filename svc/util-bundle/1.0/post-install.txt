@@ -1,9 +1,5 @@
-<bg=blue;fg=white>                            </>
-<bg=blue;fg=white> Finish Encore Installation </>
-<bg=blue;fg=white>                            </>
+<bg=blue;fg=white>                                    </>
+<bg=blue;fg=white> Finish Svc/UtilBundle Installation </>
+<bg=blue;fg=white>                                     </>
 
-  * svc util installed</>
-
-  * Mach noch das
-
-  * und das
+  * Please adapt config/packages/svc-util.yaml
