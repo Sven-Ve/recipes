@@ -1,0 +1,6 @@
+<bg=blue;fg=white>                                       </>
+<bg=blue;fg=white> Finish Svc/ProfileBundle Installation </>
+<bg=blue;fg=white>                                       </>
+
+  * Please adapt config/packages/svc-video.yaml
+  * create table (bin/console doctrine:schema:update --force or create a migration)

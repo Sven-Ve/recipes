@@ -1,0 +1,14 @@
+liip_imagine:
+
+#    # define your filter sets under this option
+    filter_sets:
+        cache: ~
+
+        svcv_thumb_video_200:
+            filters:
+                thumbnail:
+                    size: [200, 112]
+                auto_rotate: ~
+                strip: ~
+            jpeg_quality: 90
+            png_compression_level: 4

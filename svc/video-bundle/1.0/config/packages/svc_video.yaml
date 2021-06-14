@@ -1,0 +1,12 @@
+svc_video:
+    # Enable likes for videos?
+    enableLikes:          false
+
+    # Enable short names for videos (for short URLs)?
+    enableShortNames:     false
+
+    # Enable videos groups?
+    enableGroups:         false
+
+    # Default route, for redirect after errors
+    homeRoute:            svc_video_list

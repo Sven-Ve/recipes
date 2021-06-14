@@ -1,0 +1,4 @@
+_svc_video:
+    resource: '@SvcVideoBundle/src/Resources/config/routes.xml'
+    prefix: /svc-video/{_locale}
+    requirements: {"_locale": "%app.supported_locales%"}}\n
