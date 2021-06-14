@@ -1,5 +1,7 @@
 import { Controller } from 'stimulus';
+import Swal from 'sweetalert2';
 
+/* stimulusFetch: 'lazy' */
 export default class extends Controller {
   static targets = ['content'];
   static values = {
@@ -8,13 +10,47 @@ export default class extends Controller {
   }
 
   async refreshContent(event) {
+    var url = this.urlValue;
+    if (event.detail.url) {
+      url = event.detail.url;
+    }
+
     if (this.refreshAjaxValue) {
-      this.contentTarget.style.opacity = .5;
-      const response = await fetch(this.urlValue);
-      this.contentTarget.innerHTML = await response.text();
-      this.contentTarget.style.opacity = 1;
+      const target = this.hasContentTarget ? this.contentTarget : this.element;
+      target.style.opacity = .5;
+
+      var response;
+      try {
+        response = await fetch(url);
+      }
+      catch(err) {
+        this.handleError(err.message);
+        return;
+      }
+
+      if (response.ok) {
+        target.innerHTML = await response.text();
+        target.style.opacity = 1;
+      } else {
+        this.handleError(response.status);
+      }
     } else {
       location.reload();
     }
+  }
+
+  handleError(error) {
+    Swal.fire({
+      title: "Error",
+      html: '<strong>Cannot load page</strong><br /><br />Please try reload it.<br /><br /><small>error: "' + error + '"</small>',
+      icon: 'error',
+      showCancelButton: false,
+      confirmButtonText: 'Reload',
+      allowOutsideClick: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        location.reload();
+      }
+    })
   }
 }
